@@ -11,7 +11,7 @@
 - **Покрытие кода** — 93.94% (cargo-tarpaulin)
 - **Тесты** — unit-тесты, integration-тесты, e2e-тесты, property-based тесты (proptest), doc-тесты
 - **Fuzz-тестирование** — 65+ млн итераций через cargo-fuzz (libFuzzer), 0 крашей
-- **Документация** — `///` doc-комментарии, HTML-документация в `doc/`
+- **Документация** — `///` doc-комментарии, cargo doc --no-deps --open
 
 ## Запуск
 
