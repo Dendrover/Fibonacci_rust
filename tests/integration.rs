@@ -1,4 +1,4 @@
-use fibonacci_stable::{fibonacci, parse_input, Logger};
+use fibonacci_stable::{Logger, fibonacci, parse_input};
 
 #[test]
 fn given_valid_input_when_full_workflow_then_logger_tracks_everything() {

@@ -16,6 +16,12 @@ pub struct Logger {
     entries: Vec<String>,
 }
 
+impl Default for Logger {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Logger {
     /// Создаёт новый пустой логгер.
     pub fn new() -> Self {
@@ -72,7 +78,11 @@ mod tests {
 
         // Then
         let entry = &logger.entries()[0];
-        assert!(entry.starts_with("[20"), "Запись должна начинаться с таймстемпа: {}", entry);
+        assert!(
+            entry.starts_with("[20"),
+            "Запись должна начинаться с таймстемпа: {}",
+            entry
+        );
     }
 
     // 1. Несколько записей — порядок сохранён
@@ -105,7 +115,11 @@ mod tests {
 
         // Then
         let entry = &logger.entries()[0];
-        assert!(re.is_match(entry), "Запись не соответствует формату: {}", entry);
+        assert!(
+            re.is_match(entry),
+            "Запись не соответствует формату: {}",
+            entry
+        );
     }
 
     use proptest::prelude::*;

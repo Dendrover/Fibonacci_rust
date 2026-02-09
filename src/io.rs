@@ -17,7 +17,7 @@ pub fn read_input(logger: &mut Logger) -> Option<u128> {
 
     loop {
         let mut input = String::new();
-        
+
         match io::stdin().read_line(&mut input) {
             Ok(_) => {}
             Err(e) => {
@@ -86,7 +86,9 @@ pub fn parse_input(input: &str) -> Result<u128, InputError> {
         return Err(InputError::InvalidCharacters);
     }
 
-    trimmed.parse::<u128>().map_err(|_| InputError::NumberTooLarge)
+    trimmed
+        .parse::<u128>()
+        .map_err(|_| InputError::NumberTooLarge)
 }
 
 /// Выводит результат вычисления в формате `fibonacci(n) = result`.

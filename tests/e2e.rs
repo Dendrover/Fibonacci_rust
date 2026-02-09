@@ -35,7 +35,11 @@ fn given_invalid_then_valid_input_when_run_then_recovers() {
     let stdout = run_with_input("abc\n5\n");
 
     // Then
-    assert!(stdout.contains("Ошибка"), "Должно быть сообщение об ошибке: {}", stdout);
+    assert!(
+        stdout.contains("Ошибка"),
+        "Должно быть сообщение об ошибке: {}",
+        stdout
+    );
     assert!(stdout.contains("fibonacci(5) = 5"), "stdout: {}", stdout);
 }
 
@@ -54,9 +58,21 @@ fn given_overflow_then_valid_input_when_run_then_recovers() {
     let stdout = run_with_input("200\n10\n");
 
     // Then
-    assert!(stdout.contains("RU: Ошибка!"), "Должно быть RU сообщение: {}", stdout);
-    assert!(stdout.contains("EN: Error!"), "Должно быть EN сообщение: {}", stdout);
-    assert!(stdout.contains("fibonacci(10) = 55"), "Должен быть результат для 10: {}", stdout);
+    assert!(
+        stdout.contains("RU: Ошибка!"),
+        "Должно быть RU сообщение: {}",
+        stdout
+    );
+    assert!(
+        stdout.contains("EN: Error!"),
+        "Должно быть EN сообщение: {}",
+        stdout
+    );
+    assert!(
+        stdout.contains("fibonacci(10) = 55"),
+        "Должен быть результат для 10: {}",
+        stdout
+    );
 }
 
 #[test]
@@ -65,9 +81,21 @@ fn given_overflow_then_quit_when_run_then_exits_gracefully() {
     let stdout = run_with_input("200\nq\n");
 
     // Then
-    assert!(stdout.contains("RU: Ошибка!"), "Должно быть RU сообщение: {}", stdout);
-    assert!(stdout.contains("EN: Error!"), "Должно быть EN сообщение: {}", stdout);
-    assert!(stdout.contains("До свидания!"), "Должен быть выход: {}", stdout);
+    assert!(
+        stdout.contains("RU: Ошибка!"),
+        "Должно быть RU сообщение: {}",
+        stdout
+    );
+    assert!(
+        stdout.contains("EN: Error!"),
+        "Должно быть EN сообщение: {}",
+        stdout
+    );
+    assert!(
+        stdout.contains("До свидания!"),
+        "Должен быть выход: {}",
+        stdout
+    );
 }
 
 #[test]
@@ -76,8 +104,16 @@ fn given_overflow_then_valid_input_when_run_then_logs_contain_both() {
     let stdout = run_with_input("200\n10\n");
 
     // Then — логи должны содержать оба ввода
-    assert!(stdout.contains("Ввод от пользователя: '200'"), "Логи должны содержать ввод 200: {}", stdout);
-    assert!(stdout.contains("Ввод от пользователя: '10'"), "Логи должны содержать ввод 10: {}", stdout);
+    assert!(
+        stdout.contains("Ввод от пользователя: '200'"),
+        "Логи должны содержать ввод 200: {}",
+        stdout
+    );
+    assert!(
+        stdout.contains("Ввод от пользователя: '10'"),
+        "Логи должны содержать ввод 10: {}",
+        stdout
+    );
 }
 
 #[test]
@@ -86,7 +122,19 @@ fn given_invalid_input_when_run_then_shows_ru_and_en_error() {
     let stdout = run_with_input("abc\n5\n");
 
     // Then
-    assert!(stdout.contains("RU: Ошибка!"), "Должно быть RU сообщение: {}", stdout);
-    assert!(stdout.contains("EN: Error!"), "Должно быть EN сообщение: {}", stdout);
-    assert!(stdout.contains("fibonacci(5) = 5"), "Должен быть результат: {}", stdout);
+    assert!(
+        stdout.contains("RU: Ошибка!"),
+        "Должно быть RU сообщение: {}",
+        stdout
+    );
+    assert!(
+        stdout.contains("EN: Error!"),
+        "Должно быть EN сообщение: {}",
+        stdout
+    );
+    assert!(
+        stdout.contains("fibonacci(5) = 5"),
+        "Должен быть результат: {}",
+        stdout
+    );
 }

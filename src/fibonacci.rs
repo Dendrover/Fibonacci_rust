@@ -109,8 +109,14 @@ mod tests {
 
         // Then
         for i in 2..=n as usize {
-            assert_eq!(results[i], results[i - 1] + results[i - 2],
-                "fibonacci({}) должен быть равен fibonacci({}) + fibonacci({})", i, i - 1, i - 2);
+            assert_eq!(
+                results[i],
+                results[i - 1] + results[i - 2],
+                "fibonacci({}) должен быть равен fibonacci({}) + fibonacci({})",
+                i,
+                i - 1,
+                i - 2
+            );
         }
     }
 
@@ -129,8 +135,11 @@ mod tests {
             let expected = if n % 2 == 0 { 1 } else { -1 };
 
             // Then
-            assert_eq!(result, expected,
-                "Тождество Кассини не выполняется для n={}", n);
+            assert_eq!(
+                result, expected,
+                "Тождество Кассини не выполняется для n={}",
+                n
+            );
         }
     }
 
@@ -143,7 +152,10 @@ mod tests {
         let result = fibonacci(input);
 
         // Then: граничное значение — должен быть Ok
-        assert!(result.is_ok(), "fibonacci(186) должен вернуть Ok, т.к. fib(186) помещается в u128");
+        assert!(
+            result.is_ok(),
+            "fibonacci(186) должен вернуть Ok, т.к. fib(186) помещается в u128"
+        );
     }
 
     #[test]

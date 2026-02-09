@@ -21,10 +21,10 @@
 
 pub mod errors;
 pub mod fibonacci;
-pub mod logger;
 pub mod io;
+pub mod logger;
 
-pub use errors::{InputError, ComputationError};
+pub use errors::{ComputationError, InputError};
 pub use fibonacci::fibonacci;
+pub use io::{parse_input, print_result, read_input};
 pub use logger::Logger;
-pub use io::{read_input, parse_input, print_result};

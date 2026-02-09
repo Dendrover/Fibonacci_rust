@@ -1,4 +1,4 @@
-use fibonacci_stable::{read_input, print_result, Logger, fibonacci, InputError};
+use fibonacci_stable::{InputError, Logger, fibonacci, print_result, read_input};
 
 fn main() {
     let mut logger = Logger::new();

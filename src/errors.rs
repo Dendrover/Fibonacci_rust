@@ -40,10 +40,7 @@ pub enum InputError {
 impl fmt::Display for InputError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let (ru, en) = match self {
-            InputError::EmptyInput => (
-                "Пустой ввод".to_string(),
-                "Empty input".to_string(),
-            ),
+            InputError::EmptyInput => ("Пустой ввод".to_string(), "Empty input".to_string()),
             InputError::NegativeNumber => (
                 "Отрицательные числа не поддерживаются".to_string(),
                 "Negative numbers are not supported".to_string(),
