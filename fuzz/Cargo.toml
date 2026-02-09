@@ -1,0 +1,28 @@
+[package]
+name = "fibonacci_stable-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2024"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.fibonacci_stable]
+path = ".."
+
+[[bin]]
+name = "fuzz_parse_input"
+path = "fuzz_targets/fuzz_parse_input.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "fuzz_fibonacci"
+path = "fuzz_targets/fuzz_fibonacci.rs"
+test = false
+doc = false
+bench = false
